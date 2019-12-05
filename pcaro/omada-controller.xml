@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>omada-controller</Name>
+  <Repository>bebef/omada-controller</Repository>
+  <Registry>https://hub.docker.com/r/bebef/omada-controller/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/bebef/omada-controller/</Support>
+  <Project>https://www.tp-link.com/us/support/download/eap-controller/</Project>
+  <Overview>TP-Link's Omada Controller with support for own https certificates and time zones.&#xD;
+</Overview>
+  <Category>Cloud: Network:Management Status:Stable</Category>
+  <WebUI>https://[IP]:[PORT:8043]</WebUI>
+  <TemplateURL/>
+  <Icon>https://img0.apk.tools/150/0/a/1/com.tplink.tether.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1575581145</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>TP-Link's Omada Controller with support for own https certificates and time zones.&#xD;
+</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/omada/data</HostDir>
+      <ContainerDir>/opt/tplink/EAPController/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/omada/work</HostDir>
+      <ContainerDir>/opt/tplink/EAPController/work</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/omada/logs</HostDir>
+      <ContainerDir>/opt/tplink/EAPController/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>Europe/Berlin</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Timezone" Target="TZ" Default="Europe/Berlin" Mode="" Description="You only need to set the TZ environment variable when your traffic/client graph has an offset." Type="Variable" Display="always" Required="false" Mask="false">Europe/Berlin</Config>
+  <Config Name="Omada Data" Target="/opt/tplink/EAPController/data" Default="" Mode="rw" Description="Container Path: /opt/tplink/EAPController/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/omada/data</Config>
+  <Config Name="Omada Work" Target="/opt/tplink/EAPController/work" Default="" Mode="rw" Description="Container Path: /opt/tplink/EAPController/work" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/omada/work</Config>
+  <Config Name="Omada logs" Target="/opt/tplink/EAPController/logs" Default="" Mode="rw" Description="Container Path: /opt/tplink/EAPController/logs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/omada/logs</Config>
+</Container>
